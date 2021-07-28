@@ -4,7 +4,6 @@ from collections import defaultdict
 import pandas as pd
 import re 
 
-# comment
 def make_strage_data(th,td):
   if th == 'ストレージ容量（SSD）':
     td = td
@@ -89,7 +88,7 @@ def get_pc_info(driver,selen,path,columuns):
       td_tag = detail_table+f'[{j+1}]/td'
 
       try:
-        th_txt = driver.find_element_by_xpath(th_tag).text
+        th_txt = driver.find_element_by_xpath(th_tag).text # 行の見出し
         if th_txt in info_tags:
           td_txt = driver.find_element_by_xpath(td_tag).text # 行の内容
           index,td_txt = get_index(th_txt,td_txt,columuns)
